@@ -13,6 +13,7 @@ jobs:
       - name: Dependabot Auto Merge
         uses: ahmadnassri/action-dependabot-auto-merge@v2.6.6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          target: minor
-          merge-method: squash
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            target: minor  # Merge only minor updates
+            approve: true  # Approve PR before merging
+            command: merge  # Merge the PR
