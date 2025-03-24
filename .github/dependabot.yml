@@ -4,7 +4,7 @@ updates:
     directory: "/"  # Root directory (where pyproject.toml is)
     schedule:
       interval: "daily"  # Runs every day
-      time: "18:00"  # Runs at 6 PM UTC (adjust for CST)
+      time: "00:00"  # Runs at 6 PM CST
     open-pull-requests-limit: 5
     reviewers:
       - "MicahBest"
