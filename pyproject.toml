@@ -9,8 +9,8 @@ description = "A test Python package"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 license = { text = "MIT" }
 dependencies = [
-    "numpy>=2.0.0",
-    "scipy>=1.13.1",
+    "numpy==2.0.0",
+    "scipy==1.13.1",
     "h5py==3.11.0",
     "PyTools_QOL==0.0.1",
     "pytest==8.3.4"
