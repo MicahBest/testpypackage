@@ -11,7 +11,7 @@ license = { text = "MIT" }
 dependencies = [
     "numpy==2.0.0",
     "scipy==1.13.1",
-    "h5py==3.11.0",
+    "h5py==3.13.0",
     "PyTools_QOL==0.0.1",
     "pytest==8.3.4"
 ]
