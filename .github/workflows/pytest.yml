@@ -1,8 +1,7 @@
 name: Test Package
 
-on:
+on: 
   push:
-    branches: [ master ]
 
 jobs:
   test:
