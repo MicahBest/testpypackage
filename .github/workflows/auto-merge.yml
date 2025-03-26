@@ -1,15 +1,25 @@
-name: Auto Merge Dependabot PRs
+name: Dependabot Auto-merge
 
-on:
-    schedule:
-        - cron: "0 * * * *"
-    workflow_dispatch:
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  auto-merge:
+  dependabot:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'owner/my_repo'
     steps:
-      - uses: actions/checkout@v2
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
         with:
-          github-token: ${{ secrets.AUTO_MERGE_TOKEN }}
+          github-token: "${{ secrets.AUTO_MERGE_TOKEN }}"
+
+      - name: Enable auto-merge for Dependabot PRs
+        if: contains(steps.metadata.outputs.dependency-names, 'my-dependency') && steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.AUTO_MERGE_TOKEN }}

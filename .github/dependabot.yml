@@ -3,8 +3,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"  # Root directory (where pyproject.toml is)
     schedule:
-      interval: "daily"  # Runs every day
-      time: "00:00"  # Runs at 6 PM CST
+      interval: "hourly"
     open-pull-requests-limit: 5
     reviewers:
       - "MicahBest"
