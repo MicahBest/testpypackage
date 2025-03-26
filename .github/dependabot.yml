@@ -4,7 +4,7 @@ updates:
     directory: "/"  # Root directory (where pyproject.toml is)
     schedule:
       interval: "hourly"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
     reviewers:
       - "MicahBest"
     labels:
