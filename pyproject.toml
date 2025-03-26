@@ -17,8 +17,6 @@ dependencies = [
     "pyevtk==1.5.0",
     "matplotlib==3.7.4",
     "pandas==2.0.0",
-    "scikit-learn==1.0.2",
-    "scikit-image==1.0.1",
     "six==1.14.0",
 ]
 
