@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"  # Root directory (where pyproject.toml is)
     schedule:
-      interval: "hourly"
+      interval: "daily"
     open-pull-requests-limit: 10
     reviewers:
       - "MicahBest"
